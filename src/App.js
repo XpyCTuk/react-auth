@@ -5,7 +5,7 @@ import Autho from './Components/Autho'
 import TrueUser from './Components/TrueUser'
 
 function App() {
-  const [status] = useState(true)
+  const [status] = useState(false)
 
   return (
     <>
