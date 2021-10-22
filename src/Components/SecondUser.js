@@ -1,13 +1,13 @@
 import React from 'react'
 
 
-const TrueUser = (props) => {
+const SecondUser = (props) => {
     console.log(props)
 
     return (
         <div>
-            Authorized {props.counter}
+            Authorized {props.counter_2}
         </div>
     )
 }
-export default TrueUser
+export default SecondUser

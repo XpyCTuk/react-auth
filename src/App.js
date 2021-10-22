@@ -1,58 +1,45 @@
 import React, { useState } from 'react'
 import './App.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-// import Autho from './Components/Autho'
-// import TrueUser from './Components/TrueUser'
-import FirstComponent from './Components/FirstComponent'
-import SecondComponent from './Components/SecondComponent'
-import ThirdComponent from './Components/ThirdComponent'
-
+// import Copmusestate from './Components/Copmusestate'
 
 
 function App() {
-  const [status, setStatus] = useState(1)
-  // console.log('app', status);
 
-
-  const prevHandler = () => {
-
-    console.log('prevHandler', status);
-    if (status === 1) {
-      return setStatus(3);
-    }
-    return setStatus(status - 1);
-
-  }
-
-
-  const nextHandler = () => {
-
-    console.log('prevHandler', status);
-    if (status === 3) {
-      return setStatus(1);
-    }
-    return setStatus(status + 1);
-
-  }
-
-
+  const [player1Counter, setPlayer1Counter] = useState(10)
+  const [player2Counter, setPlayer2Counter] = useState(10)
 
   return (
-    <>
-      {status === 1 && <FirstComponent />}
-      {status === 2 && <SecondComponent />}
-      {status === 3 && <ThirdComponent />}
-
-      <button onClick={prevHandler}>
-        КНОПКА
-      </button>
-
-      <button onClick={nextHandler}>
-        КНОПКА
-      </button>
-
-    </>
+    <div>
+      <div>
+        <div>Иван Иванов</div>
+        <div>{player1Counter}</div>
+        <button onClick={() => {
+          setPlayer1Counter(player1Counter + 1)
+        }}>+</button>
+      </div>
+      <hr />
+      <div>
+        <div>Марина Абобовна</div>
+        <div>{player2Counter}</div>
+        <button onClick={() => {
+          setPlayer2Counter(player2Counter + 1)
+        }}>+</button>
+      </div>
+      <hr />
+      <button onClick={() => {
+        setPlayer1Counter(player1Counter - 1)
+        setPlayer2Counter(player2Counter - 1)
+      }}>-</button>
+      <button onClick={() => {
+        setPlayer1Counter(player1Counter + 1)
+        setPlayer2Counter(player2Counter + 1)
+      }}>+</button>
+    </div>
   )
 }
 
+
 export default App
+
+
