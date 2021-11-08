@@ -1,41 +1,30 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+// import Copmusestate from './Components/Copmusestate'
+// import FirstComponent from './Components/FirstComponent'
+// import Header from './Components/Header'
 import './App.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-// import Copmusestate from './Components/Copmusestate'
-
+import Data from './Components/Data/Data.json';
 
 function App() {
 
-  const [player1Counter, setPlayer1Counter] = useState(10)
-  const [player2Counter, setPlayer2Counter] = useState(10)
-
   return (
-    <div>
-      <div>
-        <div>Иван Иванов</div>
-        <div>{player1Counter}</div>
-        <button onClick={() => {
-          setPlayer1Counter(player1Counter + 1)
-        }}>+</button>
+    <>
+      <div className="my_data">
+        {Data.map(post => {
+          return (
+            <div>
+              <h1>{post.id}</h1>
+              <h2>{post.first_name}</h2>
+              <h3>{post.last_name}</h3>
+              <h4>{post.email}</h4>
+              <h5>{post.gender}</h5>
+              <h6>{post.ip_address}</h6>
+            </div>
+          )
+        })}
       </div>
-      <hr />
-      <div>
-        <div>Марина Абобовна</div>
-        <div>{player2Counter}</div>
-        <button onClick={() => {
-          setPlayer2Counter(player2Counter + 1)
-        }}>+</button>
-      </div>
-      <hr />
-      <button onClick={() => {
-        setPlayer1Counter(player1Counter - 1)
-        setPlayer2Counter(player2Counter - 1)
-      }}>-</button>
-      <button onClick={() => {
-        setPlayer1Counter(player1Counter + 1)
-        setPlayer2Counter(player2Counter + 1)
-      }}>+</button>
-    </div>
+    </>
   )
 }
 

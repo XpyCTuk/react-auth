@@ -36,10 +36,6 @@ const Autho = () => {
                     <FormControl name="password" className="authorization_field user_password" type="password" placeholder="Пароль" />
                 </FormGroup>
 
-                {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Запомнить меня" />
-                </Form.Group> */}
-
                 <Button value="Submit" className="authorization_btn" variant="primary" type="submit">
                     Войти
                 </Button>

@@ -6,7 +6,7 @@ const SecondUser = (props) => {
 
     return (
         <div>
-            Authorized {props.counter_2}
+            Authorized { }
         </div>
     )
 }
