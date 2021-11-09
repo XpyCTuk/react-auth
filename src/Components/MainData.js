@@ -1,19 +1,23 @@
 import React from 'react'
-import Data from './Data/Data.json';
+// import Data from './Data/Data.json';
 
-export const MainData = () => {
 
-    const Selected = Data.slice(0, 10);
+export const MainData = ({ data }) => {
+    console.log(data)
+    const Selected = data.slice(0, 10);
 
     return (
         <div className="main_data">
             {Selected.map(post => {
+                console.log(post);
                 return (
-                    <div key={post.id}>
-                        <h1>{post.id}</h1>
-                        <h2>{post.first_name}</h2>
-                        <h3>{post.last_name}</h3>
-                    </div>
+                    <>
+                        <div>
+                            <h1 key={post.id}>{post.id}</h1>
+                            <h2 key={post.first_name}>{post.first_name}</h2>
+                            <h3 key={post.last_name}>{post.last_name}</h3>
+                        </div>
+                    </>
                 )
             })}
         </div>
